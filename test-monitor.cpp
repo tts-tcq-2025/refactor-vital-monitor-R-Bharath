@@ -1,7 +1,8 @@
-#include <gtest/gtest.h>
-#include "./monitor.h"
-#include <vector>
-#include <string>
+#include <gtest/gtest.h>   // C++ system
+#include <vector>          // C++ system
+#include <string>          // C++ system
+
+#include "monitor.h"       // Project header
 
 // ---- Mock alarm ----
 static std::vector<std::string> capturedMessages;
@@ -50,3 +51,4 @@ TEST(Monitor, SpO2TooLow) {
     ASSERT_FALSE(vitalsOk(98.6, 80, 85, mockAlarm));
     ASSERT_EQ(capturedMessages[0], "Oxygen Saturation is out of range!");
 }
+
